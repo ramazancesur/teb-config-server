@@ -1,0 +1,21 @@
+---
+server:
+  port: {config-service.port}
+  ssl:
+   key-store-type: JKS
+   key-store: classpath:keystore/localhost.pfx
+   key-store-password: changeit
+
+spring:
+  application:
+    name: {config-service.name}
+  profiles:
+    active: dev
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ramazancesur/teb-config.git
+          username: ramazancesur
+          password: Ramazan.71
+          search-paths: dev
